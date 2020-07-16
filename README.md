@@ -22,3 +22,7 @@
 
 
 In the pojo folder, update GlobalSettings.java to change the location of re.model (relex model) and rule_based_model_offline.ser.gz (rule_base_model) to your local directory.
+
+1. nctids.txt contains the list of nctids which we use to fetch eligibility criteria (it is the input to criteria fetch command)
+2. output_files contains 3 files in the format "nctids".txt which is the output of criteria fetch step
+3. criteria.txt is the input file to the criteria parse step

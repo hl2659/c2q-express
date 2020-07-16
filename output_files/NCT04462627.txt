@@ -1,0 +1,4 @@
+Inclusion Criteria:
+COVID19 positive patients admitted within the CHU Brugmann Hospital
+Exclusion Criteria:
+None

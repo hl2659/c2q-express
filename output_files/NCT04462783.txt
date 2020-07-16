@@ -1,0 +1,10 @@
+Inclusion Criteria:
+Reported symptoms of viral illness during ED encounter
+Tested for SARS-CoV-2 (COVID-19) during ED encounter
+Discharged home from the Emergency Department
+Exclusion Criteria:
+Prisoners
+Residents of congregate living facilities who are already being monitored
+Baseline oxygen requirement
+Patients whose primary goals of care are palliative
+Pregnant women

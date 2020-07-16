@@ -1,4 +1,4 @@
-In the pojo folder, update GlobalSettings.java to change the location of re.model (relex model) and rule_based_model_offline.ser.gz (rule_base_model) to your local directory.# Criteria Parser
+# Criteria Parser
 ### Instruction 
 
 ### Get Started
@@ -11,6 +11,11 @@ In the pojo folder, update GlobalSettings.java to change the location of re.mode
 - -all	run the entire pipeline for criteria inforamtion extraction (Under testing)
 
 ### Examples
+- Nct-id Fetching
+python new_id_extraction.py --username_aact ____ --password_aact ____ --from_date ___ --to_date ____ --path ____
+
+from_date and to_date to be given in YYYY-MM-DD format. path is where you want to save the text file output of nctids.
+
 - Criteria Fetching
 > java -jar criteria_parser.jar -fetch -nctid_path /Users/cy2465/Documents/nctids.txt -result_dir /Users/cy2465/Documents/
 
@@ -26,3 +31,5 @@ In the pojo folder, update GlobalSettings.java to change the location of re.mode
 1. nctids.txt contains the list of nctids which we use to fetch eligibility criteria (it is the input to criteria fetch command)
 2. output_files contains 3 files in the format "nctids".txt which is the output of criteria fetch step
 3. criteria.txt is the input file to the criteria parse step
+
+

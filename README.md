@@ -11,8 +11,8 @@
 - -all	run the entire pipeline for criteria inforamtion extraction (Under testing)
 
 ### Examples
-- Nct-id Fetching
-python new_id_extraction.py --username_aact ____ --password_aact ____ --from_date ___ --to_date ____ --path ____
+- Nct-id Fetching:
+> python new_id_extraction.py --username_aact ____ --password_aact ____ --from_date ___ --to_date ____ --path ____
 
 from_date and to_date to be given in YYYY-MM-DD format. path is where you want to save the text file output of nctids.
 

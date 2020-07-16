@@ -1,0 +1,123 @@
+NCT04460937	INC	0	esophageal cancer	Condition	false	45	62	no_temporal	no_value
+NCT04460937	INC	0	adenocarcinoma	Condition	false	89	103	no_temporal	no_value
+NCT04460937	INC	0	adenocarcinomas	Condition	false	152	167	no_temporal	no_value
+NCT04460937	INC	0	imaging	Procedure	true	317	324	no_temporal	no_value
+NCT04460937	INC	0	metastatic disease	Condition	true	341	359	no_temporal	no_value
+NCT04460937	INC	1	Eastern Cooperative Oncology Group ( ECOG ) performance status 0-1 ( Karnofsky	Measurement	false	1	79	no_temporal	> = 70 %
+NCT04460937	INC	1	> = 70 %	Value	false	80	88	no_temporal	no_value
+NCT04460937	INC	2	Leukocytes	Measurement	false	1	11	no_temporal	> = 3,000 / mcL
+NCT04460937	INC	2	> = 3,000 / mcL	Value	false	12	27	no_temporal	no_value
+NCT04460937	INC	3	Absolute neutrophil count	Measurement	false	1	26	no_temporal	> = 1,500 / mcL
+NCT04460937	INC	3	> = 1,500 / mcL	Value	false	27	42	no_temporal	no_value
+NCT04460937	INC	4	Hemoglobin	Measurement	false	1	11	no_temporal	> = 9 g/dL
+NCT04460937	INC	4	> = 9 g/dL	Value	false	12	22	no_temporal	no_value
+NCT04460937	INC	5	Platelets	Measurement	false	1	10	no_temporal	> = 100,000 / mcL
+NCT04460937	INC	5	> = 100,000 / mcL	Value	false	11	28	no_temporal	no_value
+NCT04460937	INC	6	Total bilirubin =	Measurement	false	1	18	no_temporal	< 1.5 x institutional upper limit of normal ( ULN )
+NCT04460937	INC	6	< 1.5 x institutional upper limit of normal ( ULN )	Value	false	19	70	no_temporal	no_value
+NCT04460937	INC	7	Aspartate aminotransferase	Measurement	false	1	27	no_temporal	= < 3 x institutional ULN
+NCT04460937	INC	7	serum	Drug	false	38	43	no_temporal	no_value
+NCT04460937	INC	7	transaminase	Measurement	false	65	77	no_temporal	no_value
+NCT04460937	INC	7	alanine	Drug	false	91	98	no_temporal	no_value
+NCT04460937	INC	7	serum	Drug	false	126	131	no_temporal	no_value
+NCT04460937	INC	7	= < 3 x institutional ULN	Value	false	175	200	no_temporal	no_value
+NCT04460937	INC	8	Creatinine	Drug	false	1	11	no_temporal	no_value
+NCT04460937	INC	8	< 1.5 x institutional ULN OR	Value	false	14	42	no_temporal	no_value
+NCT04460937	INC	9	Glomerular filtration rate	Measurement	false	1	27	no_temporal	> = 60 mL / min/1
+NCT04460937	INC	9	lower kidney function values	Measurement	false	106	134	no_temporal	no_value
+NCT04460937	INC	9	> = 60 mL / min/1	Value	false	36	53	no_temporal	no_value
+NCT04460937	INC	9	lower than 30 mL/min/1 .73 m ^ 2	Value	false	140	172	no_temporal	no_value
+NCT04460937	INC	10	chronic hepatitis	Condition	false	31	48	no_temporal	no_value
+NCT04460937	INC	10	infection	Condition	false	65	74	no_temporal	no_value
+NCT04460937	INC	11	hepatitis	Condition	false	28	37	no_temporal	no_value
+NCT04460937	INC	11	infection	Condition	false	54	63	no_temporal	no_value
+NCT04460937	INC	11	HCV infection	Condition	false	19	32	no_temporal	no_value
+NCT04460937	INC	11	treatment	Procedure	false	54	63	no_temporal	no_value
+NCT04460937	INC	12	metastases	Condition	false	29	39	no_temporal	no_value
+NCT04460937	INC	12	imaging	Procedure	false	72	79	no_temporal	no_value
+NCT04460937	INC	12	CNS ) - directed therapy shows	Drug	false	111	141	no_temporal	no_value
+NCT04460937	INC	13	progressive brain metastases	Condition	false	22	50	no_temporal	no_value
+NCT04460937	INC	13	active brain metastases	Condition	false	53	76	no_temporal	no_value
+NCT04460937	INC	13	leptomeningeal disease	Condition	false	82	104	no_temporal	no_value
+NCT04460937	INC	13	treatment	Procedure	false	183	192	no_temporal	no_value
+NCT04460937	INC	14	malignancy	Condition	false	37	47	concurrent	no_value
+NCT04460937	INC	14	treatment	Procedure	false	73	82	no_temporal	no_value
+NCT04460937	INC	14	concurrent	Temporal	false	26	36	no_temporal	no_value
+NCT04460937	INC	15	symptoms	Condition	false	40	48	current	no_value
+NCT04460937	INC	15	cardiac	Condition	false	52	59	no_temporal	no_value
+NCT04460937	INC	15	cardiac disease	Condition	false	52	67	no_temporal	no_value
+NCT04460937	INC	15	treatment	Procedure	false	84	93	no_temporal	no_value
+NCT04460937	INC	15	cardiotoxic agents	Drug	false	99	117	no_temporal	no_value
+NCT04460937	INC	15	cardiac	Condition	false	162	169	no_temporal	no_value
+NCT04460937	INC	15	New York Heart Association Functional Classification	Condition	false	189	241	no_temporal	no_value
+NCT04460937	INC	15	current	Temporal	false	32	39	no_temporal	no_value
+NCT04460937	INC	17	life expectancy	Observation	false	17	32	no_temporal	no_value
+NCT04460937	INC	17	> 3 months	Temporal	false	33	43	no_temporal	no_value
+NCT04460937	INC	18	electrocardiogram	Procedure	false	23	40	within 8 weeks	no_value
+NCT04460937	INC	18	treatment	Procedure	false	73	82	no_temporal	no_value
+NCT04460937	INC	18	conduction	Condition	true	158	168	no_temporal	no_value
+NCT04460937	INC	18	ECG	Procedure	true	194	197	no_temporal	no_value
+NCT04460937	INC	18	within 8 weeks	Temporal	false	49	63	no_temporal	no_value
+NCT04460937	INC	19	QTcF	Measurement	false	63	67	no_temporal	no_value
+NCT04460937	INC	19	ECG	Procedure	false	144	147	no_temporal	no_value
+NCT04460937	INC	19	ECG	Procedure	false	164	167	no_temporal	no_value
+NCT04460937	INC	19	QTcF	Measurement	false	183	187	no_temporal	> 480 msec , then a mean QTcF of = < 480 msec obtained from 3 ECGs
+NCT04460937	INC	19	> 480 msec ( as calculated per institutional standards	Value	false	70	124	no_temporal	no_value
+NCT04460937	INC	19	> 480 msec , then a mean QTcF of = < 480 msec obtained from 3 ECGs	Value	false	188	254	no_temporal	no_value
+NCT04460937	INC	20	congenital long QT syndrome	Condition	false	15	42	no_temporal	no_value
+NCT04460937	INC	21	unknown	Observation	false	58	65	no_temporal	no_value
+NCT04460937	INC	21	women	Demographic	false	103	108	no_temporal	no_value
+NCT04460937	INC	21	child-bearing potential	Condition	false	112	135	no_temporal	no_value
+NCT04460937	INC	21	contraception	Observation	false	163	176	no_temporal	no_value
+NCT04460937	INC	21	birth	Condition	false	209	214	no_temporal	no_value
+NCT04460937	INC	21	drug exposure	Observation	false	265	278	no_temporal	no_value
+NCT04460937	INC	21	treatment	Procedure	false	352	361	no_temporal	no_value
+NCT04460937	INC	21	2 weeks	Temporal	false	242	249	no_temporal	no_value
+NCT04460937	INC	21	Women	Demographic	false	1	6	no_temporal	no_value
+NCT04460937	INC	21	negative serum or urine pregnancy test	Measurement	false	46	84	no_temporal	no_value
+NCT04460937	INC	21	sensitivity	Condition	false	95	106	no_temporal	no_value
+NCT04460937	INC	21	within 1 week	Temporal	false	144	157	no_temporal	no_value
+NCT04460937	INC	21	woman	Demographic	false	10	15	no_temporal	no_value
+NCT04460937	INC	21	pregnant	Condition	false	23	31	no_temporal	no_value
+NCT04460937	INC	21	pregnant	Condition	false	50	58	no_temporal	no_value
+NCT04460937	INC	21	Men	Demographic	false	1	4	no_temporal	no_value
+NCT04460937	INC	21	contraception	Observation	false	74	87	no_temporal	no_value
+NCT04460937	INC	21	treatment	Procedure	false	165	174	no_temporal	no_value
+NCT04460937	INC	21	Male	Demographic	false	1	5	no_temporal	no_value
+NCT04460937	INC	21	exposure	Condition	true	46	54	no_temporal	no_value
+NCT04460937	EXC	0	chemotherapy	Procedure	false	23	35	no_temporal	no_value
+NCT04460937	EXC	0	radiotherapy	Procedure	false	39	51	no_temporal	no_value
+NCT04460937	EXC	0	mitomycin	Drug	false	97	106	no_temporal	no_value
+NCT04460937	EXC	0	within 4 weeks	Temporal	false	52	66	no_temporal	no_value
+NCT04460937	EXC	0	6 weeks	Temporal	false	69	76	no_temporal	no_value
+NCT04460937	EXC	1	anti-cancer therapy	Drug	true	66	85	no_temporal	no_value
+NCT04460937	EXC	1	alopecia	Condition	true	154	162	no_temporal	no_value
+NCT04460937	EXC	1	> grade 1	Value	false	120	129	no_temporal	no_value
+NCT04460937	EXC	2	other investigational agents	Drug	false	32	60	no_temporal	no_value
+NCT04460937	EXC	3	allergic reactions	Condition	false	12	30	no_temporal	no_value
+NCT04460937	EXC	4	medications	Procedure	false	24	35	no_temporal	no_value
+NCT04460937	EXC	4	substances	Drug	false	39	49	no_temporal	no_value
+NCT04460937	EXC	4	other agents	Drug	false	120	132	no_temporal	no_value
+NCT04460937	EXC	4	medications	Procedure	false	157	168	no_temporal	no_value
+NCT04460937	EXC	4	over-the-counter medicine	Drug	false	230	255	no_temporal	no_value
+NCT04460937	EXC	4	herbal	Drug	false	259	265	no_temporal	no_value
+NCT04460937	EXC	5	uncontrolled intercurrent illness	Condition	false	15	48	no_temporal	no_value
+NCT04460937	EXC	6	psychiatric illness/social situations	Condition	false	15	52	no_temporal	no_value
+NCT04460937	EXC	7	Pregnant	Condition	false	1	9	no_temporal	no_value
+NCT04460937	EXC	7	women	Demographic	false	10	15	no_temporal	no_value
+NCT04460937	EXC	7	unknown	Observation	false	21	28	no_temporal	no_value
+NCT04460937	EXC	7	treatment	Procedure	false	99	108	no_temporal	no_value
+NCT04460937	EXC	7	breastfeeding	Condition	false	138	151	no_temporal	no_value
+NCT04460937	EXC	7	other agents	Drug	false	41	53	no_temporal	no_value
+NCT04460937	EXC	8	abdominal radiation therapy	Drug	false	19	46	no_temporal	no_value
+NCT04460937	EXC	8	cancer	Condition	false	51	57	no_temporal	no_value
+NCT04460937	EXC	9	congenital long QT syndrome	Condition	false	15	42	no_temporal	no_value
+NCT04460937	EXC	9	Torsades de pointes	Condition	false	64	83	no_temporal	no_value
+NCT04460937	EXC	9	ventricular arrhythmias	Condition	true	47	70	no_temporal	no_value
+NCT04460937	EXC	9	recent myocardial infarction	Observation	true	74	102	no_temporal	no_value
+NCT04460937	EXC	10	medications	Procedure	false	39	50	no_temporal	no_value
+NCT04460937	EXC	10	substances	Drug	false	54	64	no_temporal	no_value
+NCT04460937	EXC	10	activity	Observation	false	98	106	no_temporal	no_value
+NCT04460937	EXC	11	Human immunodeficiency virus	Measurement	false	1	29	no_temporal	no_value
+NCT04460937	EXC	11	antiretroviral therapy	Drug	false	59	81	no_temporal	no_value
+NCT04460937	EXC	11	highly active antiretroviral therapy	Drug	false	15	51	no_temporal	no_value

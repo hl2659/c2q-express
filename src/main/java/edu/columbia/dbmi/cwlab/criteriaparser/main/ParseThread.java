@@ -28,25 +28,28 @@ public class ParseThread extends Thread {
 //		int last_index_N = this.index_file.lastIndexOf("N");
 //		int last_index_fullstop = this.index_file.lastIndexOf(".");
 // 		String nctid = this.index_file.substring(last_index_N,last_index_fullstop);
-		String[] ecindex=indexc.split("\r\n");
+		String[] ecindex=indexc.split("\n");
 		HashMap<String,String> pathmap=new HashMap<String,String>();
 //		pathmap.put(nctid,this.index_file);
 
 	for(String ecr:ecindex){ 	//Chi's code
 			String[] es=ecr.split("\t");
 			pathmap.put(es[0], es[1]);
+			System.out.println("Here 0  "+es[0] + "Here 1  "+es[1]);
+
 //			pathmap.put(nctid,es[0]);
 
 		}
 		String targetdir = this.target_dir;
 		Integer error_id=0;
-		for (int c = this.start_index; c < this.end_index;c++) {
+		for (int c = this.start_index; c < this.end_index-1;c++) {
 			try {
 				
 				error_id=c;
 				String nctid =  ecindex[c].split("\t")[0]; //Chi's code line
 				StringBuffer incsb = new StringBuffer();
 				StringBuffer excsb = new StringBuffer();
+				System.out.println("There "+pathmap.get(nctid));
 				String content = FileUtil.readFile(pathmap.get(nctid));
 				String[] rows = content.split("\n");
 				//System.out.println(nctid+"\t row length="+rows.length);
@@ -82,8 +85,8 @@ public class ParseThread extends Thread {
 				StringBuffer outsb = new StringBuffer();
 				outsb.append(aaa);
 				outsb.append(bbb);
-				FileUtil.write2File(targetdir + nctid + ".c2q", outsb.toString());
-				System.out.println("write to " + targetdir + nctid + ".c2q");
+				FileUtil.write2File(targetdir + nctid + "_parsed.txt", outsb.toString());
+				System.out.println("write to " + targetdir + nctid + "_parsed.txt");
 			} catch (Exception ex) {
 				System.out.println(error_id+"\t"+ecindex.length+" ["+this.start_index+"~"+ this.end_index+"]\t ex message="+ex.toString());
 				continue;

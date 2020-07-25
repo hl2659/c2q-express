@@ -12,7 +12,7 @@ public class CheckDomain {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ConceptSearchAPI cs= new ConceptSearchAPI("C:/Users/jaysh/OneDrive/Documents/RA/Usagi/");
+		ConceptSearchAPI cs= new ConceptSearchAPI("C:\\Users\\jaysh\\OneDrive\\Documents\\Usagi1.1.5\\");
 		String c=FileUtil.readFile("/Users/cy2465/Documents/top_200_commonused_crieria_import.txt");
 		String[] rows=c.split("\n");
 		StringBuffer sb=new StringBuffer();

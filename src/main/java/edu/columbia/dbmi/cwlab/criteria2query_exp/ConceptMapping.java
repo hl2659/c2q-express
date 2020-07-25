@@ -9,7 +9,7 @@ import org.ohdsi.usagi.apis.ConceptSearchAPI;
 import edu.columbia.dbmi.cwlab.util.FileUtil;
 
 public class ConceptMapping {
-	ConceptSearchAPI cs=new ConceptSearchAPI("C:/Users/jaysh/OneDrive/Documents/RA/Usagi/");// /home/cy2465/Usagi/
+	ConceptSearchAPI cs=new ConceptSearchAPI("C:\\Users\\jaysh\\OneDrive\\Documents\\Usagi1.1.5\\");// /home/cy2465/Usagi/
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

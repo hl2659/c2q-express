@@ -93,12 +93,8 @@ public class CriteriaFetcher {
 			String b ="c" + nctid + "a";
 
 			String finalpath = targetpath + b.substring(1,12) + ".txt";
-			System.out.println(targetpath + b.substring(1,12) + ".txt");
+			//System.out.println(targetpath + b.substring(1,12) + ".txt");
 
-
-//			String file_path = new String(nctid);
-//
-//			String extension = new String(".txt");
 			FileUtil.write2File(finalpath, sb.toString());
 
 		}

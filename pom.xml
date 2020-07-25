@@ -75,6 +75,13 @@
 						<include>edu/columbia/dbmi/cwlab/model/*.sutime.txt</include>
 						<include>edu/columbia/dbmi/cwlab/model/**/*.*</include>
 						<include>edu/columbia/dbmi/cwlab/model/**/*</include>
+						<include>edu/columbia/dbmi/cwlab/models/*.ser.gz</include>
+						<include>edu/columbia/dbmi/cwlab/models/*.gz</include>
+						<include>edu/columbia/dbmi/cwlab/models/*.model</include>
+						<include>edu/columbia/dbmi/cwlab/models/*.txt</include>
+						<include>edu/columbia/dbmi/cwlab/models/*.sutime.txt</include>
+						<include>edu/columbia/dbmi/cwlab/models/**/*.*</include>
+						<include>edu/columbia/dbmi/cwlab/models/**/*</include>
 					</includes>
 
 				</resource>

@@ -53,6 +53,9 @@ Directory 1: Eligibilty criterias will be fetched and stored in files in this di
 Directory 2: This directory will contain the parsed eligibility criterias and a final mapping file. (result_dir2)
 The final mapping file then needs to be stored in the ec_all criteria table.
 
+You can use nctids and test_nctids for testing the code. to fetch new trials. you need to run new_id_extraction.py file with the required arguments and
+then run -complete and the other required args c2q code so as to obtain entity mappings and normalizations (final mapping file is to be used to update ec_all criteria table)
+Also need to put umlsabbr.jar and Usagi1.1.5.jar in the lib folder of project
 
 In the pojo folder, update GlobalSettings.java to change the location of re.model (relex model) and rule_based_model_offline.ser.gz (rule_base_model) to your local directory.
 

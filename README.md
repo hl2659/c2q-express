@@ -2,6 +2,11 @@
 ### Instruction 
 
 ### Get Started
+Firstly, fetch the nctids from your required start date to required end date using new_id_extraction.py file using the necessary arguments. 
+Example to fetch nctids shown in examples.
+
+Secondly, comes the Criteria2Query process where we have 3 steps (fetch,parse and normalization)  
+
 - -fetch	fetch free-text eligibility criteria from clinicaltrials.gov
 - -parse	parse free-text eligibility criteria
 - -normalize	numberic and temporal information normalization
@@ -12,7 +17,7 @@
 	
 - -complete	run the entire pipeline for criteria inforamtion extraction (fetch, parse and normalize)
 
-
+Thirdly, we need to insert new trials as per ec_all_criteria_table with the use of mapping text file. See instructions for further help
 
 ### Examples
 - Nct-id Fetching:
@@ -47,6 +52,7 @@ C:\Users\jaysh\OneDrive\Documents\RA\complete_steps_parsed\
 -thread
 2
 
+## Instructions
 For the Complete Pipeline:
 You need to make 2 folders (2 directories):
 Directory 1: Eligibilty criterias will be fetched and stored in files in this directory (result_dir)

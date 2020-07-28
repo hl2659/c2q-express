@@ -63,4 +63,14 @@ In the pojo folder, update GlobalSettings.java to change the location of re.mode
 2. output_files contains 3 files in the format "nctids".txt which is the output of criteria fetch step
 3. criteria.txt is the input file to the criteria parse step
 
+- Inserting New trials as per ec_all_criteria_table with the use of mapping text file
+Use mapping_insertion.py to accomplish this task with the help of the following arguments
+--hostname (give local or server hostname) If it is you local pc, this can be localhost
+--database_name (name of database where the table is stored) e.g. ctkb
+--username_local (the username you use) e.g. root
+--password_local 
+--table_name (in our case ec_all_criteria)
+--path (the path where the mapping text file is stored)
+
+Example command:python mapping_insertion.py --hostname localhost --database_name ctkb --username_local root -password_local #### --table_name ec_all_criteria --path C:\Users\jaysh\OneDrive\Documents\RA\complete_steps_parsed\mapping.txt
 

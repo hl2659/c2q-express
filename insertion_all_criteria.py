@@ -24,29 +24,45 @@ connection = mysql.connector.connect(host=args.hostname,
 
 cursor = connection.cursor()
 
-
-with open(args.path) as f:
+with open(args.path,'r',encoding='utf8') as f:
     mappings = f.readlines()
 
 
 cursor.execute("select id from "+ args.table_name+ " where id = (select MAX(id) from "+args.table_name+")") 
 last_id = cursor.fetchall()[0][0]
 
+cursor.execute("select nctid from "+args.table_name) # name of your table 
+rows = cursor.fetchall()
+nct_id_present = []
+for r in rows:
+    nct_id_present.append(r[0])
 
-for i in range(len(mappings)):
+new_nctids = []
+for i in range(0,len(mappings)):
+	nct=mappings[i][:-1].split("\t")
+	new_nctids.append(nct[0])
+
+
+final_nctids= list(set(new_nctids)-set(nct_id_present))
+
+for j in range(0,len(mappings)):
 	last_id+=1
 	out=[last_id]
-	x=mappings[i][:-1].split("\t")
+	x=mappings[j][:-1].split("\t")
+	x=x[:15]
+	if x[0] not in final_nctids:
+		last_id-=1
+		continue
+	# print(x)
 	if x[11]=="unmapped":
 		x[11]='0.0'
 	out+=x
 	data=tuple(out)
 	print(str(data))
 	cursor.execute("INSERT INTO " +args.table_name+" (id,nctid,include,line_num,concept_id,concept_name,domain,neg,start_index,\
-		end_index,temporal_source_text,entity_source_text,score,beforedays,afterdays,numeric_source_text,max,min)\
+		end_index,temporal_source_text,entity_source_text,score,beforedays,afterdays,numeric_source_text)\
 		VALUES " + str(data))
 	connection.commit()
-
 
 
 cursor.close()

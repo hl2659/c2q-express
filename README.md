@@ -38,6 +38,7 @@ from_date and to_date to be given in YYYY-MM-DD format. path is where you want t
 > java -jar criteria_parser.jar -normalize -numeric -temporal -entity -value_range_path C:\Users\jaysh\OneDrive\Documents\RA\parsed_files\NCT04462783.txt -result_path C:\Users\jaysh\OneDrive\Documents\RA\test_mapping_results\combinedtest1.txt -temporal_path C:\Users\jaysh\OneDrive\Documents\RA\test_mapping_results\combinedtest1.txt -usagi_path C:\Users\jaysh\OneDrive\Documents\Usagi-1.1.5\ -result_dir C:\Users\jaysh\OneDrive\Documents\RA\combined_results\ -thread 2
 
 
+To Run ALL the above steps Thorugh 1 command:
 - Run The Complete pipeline of criteria fetching, parsing and normalization:
 > java -jar criteria_parser.jar -complete -nctid_path
 C:\Users\jaysh\OneDrive\Documents\RA\test_nctids.txt
@@ -70,7 +71,7 @@ In the pojo folder, update GlobalSettings.java to change the location of re.mode
 3. criteria.txt is the input file to the criteria parse step
 
 - Inserting New trials as per ec_all_criteria_table with the use of mapping text file
-Use mapping_insertion.py to accomplish this task with the help of the following arguments
+Use insertion_all_criteria.py to accomplish this task with the help of the following arguments
 --hostname (give local or server hostname) If it is you local pc, this can be localhost
 --database_name (name of database where the table is stored) e.g. ctkb
 --username_local (the username you use) e.g. root
@@ -78,9 +79,9 @@ Use mapping_insertion.py to accomplish this task with the help of the following 
 --table_name (in our case ec_all_criteria)
 --path (the path where the mapping text file is stored)
 
-Example command:python mapping_insertion.py --hostname localhost --database_name ctkb --username_local root -password_local #### --table_name ec_all_criteria --path C:\Users\jaysh\OneDrive\Documents\RA\complete_steps_parsed\mapping.txt
+Example command: python insertion_all_criteria.py --hostname localhost --database_name ctkb --username_local root -password_local #### --table_name ec_all_criteria --path C:\Users\jaysh\OneDrive\Documents\RA\complete_steps_parsed\mapping.txt
 
-## Inserting into ec_* tables (procedure,observation.drug,measurement,condition)
+## Inserting into ec_* tables (procedure,observation,drug,measurement,condition)
 Use ec_tables.py file with the following arguments:
 1. -hn or  --hostname, help = "give local or server hostname"
 2. -d or  --database_name , help = "give local database name"

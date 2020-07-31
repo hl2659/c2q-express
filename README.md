@@ -80,3 +80,10 @@ Use mapping_insertion.py to accomplish this task with the help of the following 
 
 Example command:python mapping_insertion.py --hostname localhost --database_name ctkb --username_local root -password_local #### --table_name ec_all_criteria --path C:\Users\jaysh\OneDrive\Documents\RA\complete_steps_parsed\mapping.txt
 
+## Inserting into ec_* tables (procedure,observation.drug,measurement,condition)
+Use ec_tables.py file with the following arguments:
+1. -hn or  --hostname, help = "give local or server hostname"
+2. -d or  --database_name , help = "give local database name"
+ 3. -us or --username_local , help = "give local database username"
+4. -ps or --password_local , help = "give local database password"
+5. -p or --path , help = "path of mapping text file"

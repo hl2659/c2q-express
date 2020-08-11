@@ -57,6 +57,10 @@ public class Main
     	
     	@Argument(description = "NCTID List")
         String nctid_path;
+
+		@Argument(description = "NCTID List: Update ctgov_trial_condition and" +
+				" ctgov_trial_intervention")
+		String nctid_path2;
     	
     	@Argument(description = "Usagi Path")
         String usagi_path;
@@ -69,6 +73,27 @@ public class Main
     	
     	@Argument(description = "Temporal text")
         String temporal_path;
+
+		@Argument(description = "Local database hostname")
+		String host;
+
+		@Argument(description = "Local Database port")
+		String port;
+
+		@Argument(description = "local Database name")
+		String database_name;
+
+		@Argument(description = "local Database username")
+		String username1;
+
+		@Argument(description = "local Database password")
+		String pass1;
+
+		@Argument(description = "AACT Database password")
+		String pass2;
+
+		@Argument(description = "AACT Database password")
+		String username2;
     	
     	@Argument(description = "Entity text")
         String entity_path;
@@ -84,6 +109,12 @@ public class Main
         
         @Argument(description = "Result file path")
         String result_path;
+
+		@Argument(description = " Call trial_condition")
+		boolean cid;
+
+		@Argument(description = "Call common condition")
+		boolean ccd;
 
         @Argument(description = "The number of threads")
         Integer thread = Runtime.getRuntime().availableProcessors();
@@ -206,7 +237,7 @@ public class Main
 					p1.join();
 
 				}
-				System.out.println("2");
+//				System.out.println("2");
 				File directorypath2 = new File(option.result_dir2);
 				String contents2[] = directorypath2.list();
 				for (int j=0; j <contents2.length;j++){
@@ -251,6 +282,19 @@ public class Main
 						}
 					}
 				}
+			}
+            else if(option.cid == true){
+				trial_condition trial=new trial_condition();
+				trial.fetchid(option.nctid_path2,option.usagi_path,
+						option.host,option.port,option.database_name,
+						option.username1,option.pass1,option.username2,
+						option.pass2);
+
+			}
+			else if(option.ccd == true){
+				common_condition com =new common_condition();
+				com.fetchCondition();
+
 			}
         }
         catch (IllegalArgumentException e)

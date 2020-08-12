@@ -292,8 +292,12 @@ public class Main
 
 			}
 			else if(option.ccd == true){
-				common_condition com =new common_condition();
-				com.fetchCondition();
+				common_condition com1 =new common_condition();
+				com1.fetchCondition(option.host,option.port,option.database_name,
+						option.username1,option.pass1);
+				common_intervention com2 =new common_intervention();
+				com2.fetchIntervention(option.host,option.port,option.database_name,
+						option.username1,option.pass1);
 
 			}
         }

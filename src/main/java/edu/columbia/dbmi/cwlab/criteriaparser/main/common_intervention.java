@@ -1,47 +1,31 @@
 package edu.columbia.dbmi.cwlab.criteriaparser.main;
-
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.util.*;
-import java.io.FileWriter;
-import java.io.IOException;
-import org.json.simple.JSONValue;
-import org.json.simple.JSONObject;
-
-import org.json.simple.parser.JSONParser;
-import org.ohdsi.usagi.UsagiSearchEngine;
-import org.ohdsi.usagi.apis.ConceptSearchAPI;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-public class common_condition {
-//    String mapping;
+public class common_intervention {
     String host;
     String port;
     String database_name;
     String username1;
     String pass1;
-//    String nctid_path;
+    public void fetchIntervention(String host,
+                                  String port, String database_name, String username1,
+                                  String pass1)
 
-    public void fetchCondition( String host,
-                                String port, String database_name, String username1,
-                                String pass1){
+    {
         this.host =host;
         this.port =port;
         this.database_name =database_name;
         this.username1 =username1;
         this.pass1=pass1;
-
         Connection con1 = null;
+
         try
         {
 //            String dbURL1 = "jdbc:mysql://localhost:3306/clinical_trails";
             String dbURL1 = "jdbc:mysql://" +host+":"+port+"/"+database_name;
-
             con1 = DriverManager.getConnection(dbURL1, username1, pass1);
             if (con1 != null)
                 System.out.println("Connected to database #1");
@@ -60,11 +44,11 @@ public class common_condition {
 //            triple.add(rs.getString(3));
 //            triple.add(rs.getString(4));
 //            triple.add(rs.getString(5));
-            String triple=
-                    rs.getString(1)+"#"+rs.getString(2)+"#"+rs.getString(3)+"#"+rs.getString(4)+"#"+rs.getString(5);
+                String triple=
+                        rs.getString(1)+"#"+rs.getString(2)+"#"+rs.getString(3)+"#"+rs.getString(4)+"#"+rs.getString(5);
 //            System.out.println(triple);
-            tcount.put(triple,tcount.getOrDefault(triple,0)+1);
-            ccount.put(triple,1);
+                tcount.put(triple,tcount.getOrDefault(triple,0)+1);
+                ccount.put(triple,1);
             }
 
             System.out.println(tcount);
@@ -111,7 +95,8 @@ public class common_condition {
             for(String k: tcount.keySet() ){
                 id= k.split("#")[0];
                 String sql1 =
-                        "Select mesh_term,condition_concept_id FROM ctgov_trial_condition where nct_id = '"+ id+ "' ;" ;
+                        "Select mesh_term,intervention_concept_id FROM ctgov_trial_intervention where nct_id = '"+ id+
+                                "' ;" ;
                 ResultSet rs2 = stmt.executeQuery(sql1);
                 List<String> c = new ArrayList<>();
                 while(rs2.next()){
@@ -172,15 +157,15 @@ public class common_condition {
                 value4 = concept_count.get(combination);
                 String[] record =combination.split("#");
                 System.out.println("Combi : " +combination);
-                String sql4 = "INSERT INTO test_ec_common_condition(condition_concept_id," +
-                        "condition_concept_name,criteria_concept_id,criteria_concept_name," +
+                String sql4 = "INSERT INTO ec_common_intervention(intervention_concept_id," +
+                        "intervention_concept_name,criteria_concept_id,criteria_concept_name," +
                         "criteria_domain,include,concept_count,total_count)"+"VALUES('"+record[0]+
                         "','"+record[1]+"','"+record[2]+ "','"+record[3]+ "','"+record[4]+
                         "', '"+record[5]+"','"+value4+"','"+value3+"');";
                 stmt.executeUpdate(sql4);
 
             }
-        con1.close();
+            con1.close();
 
         }
 
@@ -188,8 +173,6 @@ public class common_condition {
         {
             System.out.println(e);
         }
-
-
 
     }
 }

@@ -104,6 +104,7 @@ public class trial_condition {
                 while(rs1.next()){
                     List<String> mesh = new ArrayList<>();
                     String mesh_term =null;
+                    String dmt=null;
                     String unique_id=null;
                     String condition_concept_id=null;
                     String map_method = null;
@@ -123,8 +124,11 @@ public class trial_condition {
                                 condition_concept_id = Integer.toString(lsc.get(0).concept.conceptId);
                                 map_method = "USAGI";
                         }
-                        mesh.add(rs1.getString(1));
-                        mesh.add(rs1.getString(2));
+                        mesh_term=mesh_term.replaceAll("'","''");
+                        dmt = rs1.getString(2);
+                        dmt=dmt.replaceAll("'","''");
+                        mesh.add(mesh_term);
+                        mesh.add(dmt);
                         mesh.add(unique_id);
                         mesh.add(condition_concept_id);
                         mesh.add(map_method);
@@ -138,6 +142,7 @@ public class trial_condition {
                     while(rs2.next()) {
                         List<String> mesh2 = new ArrayList<>();
                         String mesh_term2 =null;
+                        String dmt2=null;
                         String unique_id=null;
                         String intervention_concept_id=null;
                         String map_method = null;
@@ -158,8 +163,11 @@ public class trial_condition {
                                 intervention_concept_id = Integer.toString(lsc.get(0).concept.conceptId);
                                 map_method = "USAGI";
                             }
-                            mesh2.add(rs2.getString(1));
-                            mesh2.add(rs2.getString(2));
+                            mesh_term2=mesh_term2.replaceAll("'","''");
+                            dmt2=rs2.getString(2);
+                            dmt2=dmt2.replaceAll("'","''");
+                            mesh2.add(mesh_term2);
+                            mesh2.add(dmt2);
                             mesh2.add(unique_id);
                             mesh2.add(intervention_concept_id);
                             mesh2.add(map_method);

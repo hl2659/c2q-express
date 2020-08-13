@@ -110,11 +110,14 @@ public class Main
         @Argument(description = "Result file path")
         String result_path;
 
-		@Argument(description = " Call trial_condition")
+		@Argument(description = " Call trial_condition to update ctgov_trial_condition and ctgov_trial_intervention")
 		boolean cid;
 
-		@Argument(description = "Call common condition")
+		@Argument(description = " Update ec_common_condition and ec_common_intervention")
 		boolean ccd;
+
+		@Argument(description = "Update ec_common_criteria_stats")
+		boolean stats;
 
         @Argument(description = "The number of threads")
         Integer thread = Runtime.getRuntime().availableProcessors();
@@ -299,6 +302,11 @@ public class Main
 				com2.fetchIntervention(option.host,option.port,option.database_name,
 						option.username1,option.pass1);
 
+			}
+			else if(option.stats==true){
+				criteria_stats statistics =new criteria_stats();
+				statistics.stats(option.host,option.port,option.database_name,
+						option.username1,option.pass1);
 			}
         }
         catch (IllegalArgumentException e)

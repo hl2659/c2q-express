@@ -21,7 +21,9 @@ Thirdly, we need to insert new trials as per ec_all_criteria_table with the use 
 - -all	run the entire pipeline for criteria inforamtion extraction (Under testing)
 
 ### Examples
-- Nct-id Fetching:
+## ctgov_trial_info can be updated using trial-extract script
+
+- Nct-id Fetching: You need to fetch nctids for the desired time range to be able to use the Criteria2Query project 
 > python new_id_extraction.py --username_aact ____ --password_aact ____ --from_date ___ --to_date ____ --path ____
 from_date and to_date to be given in YYYY-MM-DD format. path is where you want to save the text file output of nctids.
 
@@ -66,7 +68,8 @@ In the pojo folder, update GlobalSettings.java to change the location of re.mode
 2. output_files contains 3 files in the format "nctids".txt which is the output of criteria fetch step
 3. criteria.txt is the input file to the criteria parse step
 
-- Inserting New trials as per ec_all_criteria_table with the use of mapping text file
+## Updating ctkb database 
+Inserting New trials as per ec_all_criteria_table format into the ec_all_criteria table with the use of mapping text file
 Use insertion_all_criteria.py to accomplish this task with the help of the following arguments
 --hostname (give local or server hostname) If it is you local pc, this can be localhost
 --database_name (name of database where the table is stored) e.g. ctkb
@@ -81,6 +84,35 @@ Example command: python insertion_all_criteria.py --hostname localhost --databas
 Use ec_tables.py file with the following arguments:
 1. -hn or  --hostname, help = "give local or server hostname"
 2. -d or  --database_name , help = "give local database name"
- 3. -us or --username_local , help = "give local database username"
+3. -us or --username_local , help = "give local database username"
 4. -ps or --password_local , help = "give local database password"
 5. -p or --path , help = "path of mapping text file"
+
+## To update ctgov_trial_condition and ctgov_trial_intervention, you need to use the Criteria2Query project:
+- Call trial_condition.java to update ctgov_trial_condition and ctgov_trial_intervention for the new nctids
+Arguments required are :
+1. -nctid_path2 (It is the same path of nctids file for which we want to include or update into the above 2 tables)
+2. -usagi_path
+3. -host (example: localhost)
+4. -port (port on which mysql is established)
+5. -database_name
+6. -username1 (local database username)
+7. -pass1 (local database password)
+8. -username2 (aact database username)
+9. -pass2 (aact database password)
+
+## To update ec_common_condition and ec_common_intervention
+- We call common_condition.java and common_intervention.java together with the help of following arguments
+1. -host (example: localhost)
+2. -port (port on which mysql is established)
+3. -database_name
+4. -username1 (local database username)
+5. -pass1 (local database password)
+
+## To update ec_common_criteria_stats
+- We call criteria_stats with the help of following arguments
+1. -host (example: localhost)
+2. -port (port on which mysql is established)
+3. -database_name
+4. -username1 (local database username)
+5. -pass1 (local database password)

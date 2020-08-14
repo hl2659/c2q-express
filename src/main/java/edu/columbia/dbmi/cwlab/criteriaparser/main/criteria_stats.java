@@ -44,6 +44,7 @@ public class criteria_stats {
                     phase_map.put(rs.getString(1),null);
 
             }
+            rs.close();
 //            System.out.println(phase_map);
 
             Map<String,List<String>> condition_map =new HashMap<>();
@@ -60,8 +61,9 @@ public class criteria_stats {
                 condition_map.put(rs1.getString(1),conditions);
 
             }
+            rs1.close();
 
-            ResultSet rs2 = stmt.executeQuery("select nct_id,intervention_concept_id from ctgov_trial_intervention ");
+            ResultSet rs2 = stmt.executeQuery("select nct_id,intervention_concept_id from ctgov_trial_intervention");
             while(rs2.next()){
                 List<String> interventions= new ArrayList<>();
 
@@ -75,12 +77,12 @@ public class criteria_stats {
             }
 //            System.out.println(condition_map);
 
+            rs2.close();
             Map<String, List<List<String>>> criteria =new HashMap<>();
             ResultSet rs3= stmt.executeQuery("select nctid, concept_id, include from ec_all_criteria");
             while(rs3.next()){
                 if(rs3.getString(2).equals("unmapped"))
                     continue;
-
 
                 List<List<String>> combination = new ArrayList<>();
                 List<String> combo =new ArrayList<>();
@@ -94,7 +96,7 @@ public class criteria_stats {
                 criteria.put(rs3.getString(1),combination);
             }
 //            System.out.println(criteria);
-
+            rs3.close();
             Map<List<String>,int[]> stats =new HashMap<>();
 
             for(String nctid: criteria.keySet()){
@@ -158,10 +160,10 @@ public class criteria_stats {
 //                    System.out.println(key + " : " + value[0]+value[1]+value[2]+value[3]+value[4]);
 //
 //                }
-
+            System.out.println("Insert in ec_common_criteria_stats table");
             for(List<String> com:stats.keySet()){
                 int[] count = stats.get(com);
-                System.out.println(com+" "+ Arrays.toString(count));
+//                System.out.println(com+" "+ Arrays.toString(count));
                 String sql = "INSERT INTO test_ec_common_criteria_stats" +
                             "(condition_concept_id," +
                             "criteria_concept_id,include,p1_count," +
@@ -170,7 +172,8 @@ public class criteria_stats {
                             "');";
                 stmt.executeUpdate(sql);
             }
-
+            stmt.close();
+        System.out.println("Done");
 
         }
         catch(Exception e)
